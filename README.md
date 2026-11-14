@@ -2,7 +2,7 @@
 
 **Khulna University of Engineering & Technology (KUET)**
 Department of Computer Science and Engineering
-**CSE 2202**: Algorithm Analysis and Design Laboratory, **Lab Test – 04 (A)**
+**CSE 2202**: Algorithm Analysis and Design Laboratory
 
 | Name | Roll |
 |---|---|
