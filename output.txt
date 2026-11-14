@@ -1,0 +1,179 @@
+===== Graph: V=10, E=18, Time steps=3, Requests/step=3 =====
+
+--- Generated Road Network ---
+Vertices (intersections): 10, Edges (roads): 18
+Edge list (id : u -- v , weight):
+   0 : 2 -- 1 , w=20
+   1 : 3 -- 1 , w=9
+   2 : 4 -- 2 , w=14
+   3 : 5 -- 4 , w=2
+   4 : 6 -- 5 , w=13
+   5 : 7 -- 3 , w=10
+   6 : 8 -- 6 , w=4
+   7 : 9 -- 6 , w=1
+   8 : 10 -- 4 , w=2
+   9 : 1 -- 4 , w=7
+   10 : 7 -- 5 , w=13
+   11 : 10 -- 5 , w=19
+   12 : 7 -- 8 , w=4
+   13 : 8 -- 4 , w=4
+   14 : 1 -- 6 , w=10
+   15 : 6 -- 4 , w=4
+   16 : 10 -- 2 , w=5
+   17 : 9 -- 1 , w=2
+Adjacency list (node : neighbor(weight) ...):
+   1 : 2(20) 3(9) 4(7) 6(10) 9(2)
+   2 : 1(20) 4(14) 10(5)
+   3 : 1(9) 7(10)
+   4 : 2(14) 5(2) 10(2) 1(7) 8(4) 6(4)
+   5 : 4(2) 6(13) 7(13) 10(19)
+   6 : 5(13) 8(4) 9(1) 1(10) 4(4)
+   7 : 3(10) 5(13) 8(4)
+   8 : 6(4) 7(4) 4(4)
+   9 : 6(1) 1(2)
+   10 : 4(2) 5(19) 2(5)
+
+--- Time step 1 ---
+[Shortest-Path] MaxLoad=88 AvgLoad=18.67 Variance=749.33 TotalVehicleDistance=908
+[Greedy-LB] MaxLoad=62 AvgLoad=19.33 Variance=377.89 TotalVehicleDistance=1536
+Request 1: (n=24, s=2, d=5)
+   24 vehicles, len=9, path: 2 -> 10 -> 4 -> 5
+Request 2: (n=38, s=9, d=7)
+   26 vehicles, len=9, path: 9 -> 6 -> 8 -> 7
+   12 vehicles, len=21, path: 9 -> 1 -> 3 -> 7
+Request 3: (n=50, s=10, d=9)
+   50 vehicles, len=7, path: 10 -> 4 -> 6 -> 9
+Road-wise load (edge u-v : load):
+   3-1 : 12
+   5-4 : 24
+   7-3 : 12
+   8-6 : 26
+   9-6 : 76
+   10-4 : 74
+   7-8 : 26
+   6-4 : 50
+   10-2 : 24
+   9-1 : 12
+[Proposed(GMLR)] MaxLoad=76 AvgLoad=18.67 Variance=578.67 TotalVehicleDistance=1052
+
+--- Time step 2 ---
+[Shortest-Path] MaxLoad=30 AvgLoad=6.33 Variance=118.78 TotalVehicleDistance=616
+[Greedy-LB] MaxLoad=24 AvgLoad=8.72 Variance=74.09 TotalVehicleDistance=843
+Request 1: (n=14, s=4, d=2)
+   12 vehicles, len=7, path: 4 -> 10 -> 2
+   2 vehicles, len=14, path: 4 -> 2
+Request 2: (n=28, s=3, d=9)
+   18 vehicles, len=11, path: 3 -> 1 -> 9
+   10 vehicles, len=19, path: 3 -> 7 -> 8 -> 6 -> 9
+Request 3: (n=30, s=4, d=1)
+   24 vehicles, len=7, path: 4 -> 1
+   6 vehicles, len=7, path: 4 -> 6 -> 9 -> 1
+Road-wise load (edge u-v : load):
+   3-1 : 18
+   4-2 : 2
+   7-3 : 10
+   8-6 : 10
+   9-6 : 16
+   10-4 : 12
+   1-4 : 24
+   7-8 : 10
+   6-4 : 6
+   10-2 : 12
+   9-1 : 24
+[Proposed(GMLR)] MaxLoad=24 AvgLoad=8.00 Variance=67.11 TotalVehicleDistance=710
+
+--- Time step 3 ---
+[Shortest-Path] MaxLoad=75 AvgLoad=11.89 Variance=568.99 TotalVehicleDistance=1001
+[Greedy-LB] MaxLoad=38 AvgLoad=14.22 Variance=276.62 TotalVehicleDistance=1393
+Request 1: (n=43, s=3, d=9)
+   25 vehicles, len=11, path: 3 -> 1 -> 9
+   18 vehicles, len=19, path: 3 -> 7 -> 8 -> 6 -> 9
+Request 2: (n=16, s=10, d=1)
+   16 vehicles, len=9, path: 10 -> 4 -> 1
+Request 3: (n=32, s=3, d=6)
+   15 vehicles, len=12, path: 3 -> 1 -> 9 -> 6
+   17 vehicles, len=18, path: 3 -> 7 -> 8 -> 6
+Road-wise load (edge u-v : load):
+   3-1 : 40
+   7-3 : 35
+   8-6 : 35
+   9-6 : 33
+   10-4 : 16
+   1-4 : 16
+   7-8 : 35
+   9-1 : 40
+[Proposed(GMLR)] MaxLoad=40 AvgLoad=13.89 Variance=277.99 TotalVehicleDistance=1247
+
+>>> Average over 3 time steps <<<
+Method             MaxLoad   AvgLoad    Variance   TotalVehDist   Assign(ms)
+Shortest-Path        64.33     12.30      479.03         841.67        0.004
+Greedy-LB            41.33     14.09      242.87        1257.33        0.007
+Proposed(GMLR)       46.67     13.52      307.92        1003.00        0.006
+Candidate path generation time (all steps): 0.033 ms
+
+===== Graph: V=50, E=150, Time steps=5, Requests/step=20 =====
+
+>>> Average over 5 time steps <<<
+Method             MaxLoad   AvgLoad    Variance   TotalVehDist   Assign(ms)
+Shortest-Path       120.40     10.85      532.02        6949.60        0.055
+Greedy-LB            62.00     11.43      214.93        9066.80        0.065
+Proposed(GMLR)       65.00     11.07      223.49        8525.80        0.070
+Candidate path generation time (all steps): 2.740 ms
+
+===== Graph: V=200, E=800, Time steps=5, Requests/step=50 =====
+
+>>> Average over 5 time steps <<<
+Method             MaxLoad   AvgLoad    Variance   TotalVehDist   Assign(ms)
+Shortest-Path       153.40      6.94      353.55       22790.00        0.506
+Greedy-LB            54.40      6.90      141.03       29106.60        0.182
+Proposed(GMLR)       59.60      6.73      142.02       27820.20        0.185
+Candidate path generation time (all steps): 42.298 ms
+
+===== Graph: V=1000, E=4000, Time steps=5, Requests/step=100 =====
+
+>>> Average over 5 time steps <<<
+Method             MaxLoad   AvgLoad    Variance   TotalVehDist   Assign(ms)
+Shortest-Path       132.80      3.57      159.63       52131.80        0.452
+Greedy-LB           52.00      3.55       68.21       62666.80        0.554
+Proposed(GMLR)      57.00      3.48       69.13       60829.00        0.556
+Candidate path generation time (all steps): 495.274 ms
+
+===== Trade-off Analysis (V=200, E=800, T=5, R=50) =====
+Beta       MaxLoad    Variance   TotalVehDist
+0.00        164.80      335.65       20721.40
+0.05         70.60      140.04       24347.40
+0.10         60.00      131.71       25288.40
+0.30         54.00      129.09       26126.00
+0.50         53.60      129.07       26292.20
+1.00         53.40      129.65       26437.00
+2.00         53.60      129.74       26458.00
+Observation: Beta controls the balance between congestion and distance.
+A higher beta gives more importance to road load balancing.
+It may reduce MaxLoad and Variance, but can increase travel distance.
+The exact result depends on the generated graph and requests.
+
+===== Computational Complexity Analysis =====
+V = vertices, E = edges, R = requests, N = total vehicles,
+K = candidate paths per request, L = average edges in a path
+
+Graph generation              : O(V + E) expected
+Dijkstra (one run)            : O((V + E) log V)
+Candidate path generation     : O(R * K * (V + E) log V)
+Assignment: Shortest-Path     : O(N * L)
+Assignment: Greedy-LB         : O(N * K * L)
+Assignment: Proposed (GMLR)   : O(N * K * L)
+Evaluation                    : O(E)
+Overall per time step         : O(R*K*(V+E) log V + N*K*L + E)
+Memory                        : O(V + E + R*K*L)
+
+Scalability: running time grows almost linearly with N, R and K,
+and the Dijkstra part grows with (V+E) log V for bigger graphs.
+
+===== Limitations =====
+1) Proposed algorithm (GMLR) is a greedy HEURISTIC, not guaranteed optimal.
+   It does not directly minimize global variance or maximum load.
+2) Up to K alternative paths are generated using an edge-penalty technique.
+   They are NOT guaranteed to be the exact K-shortest simple paths,
+   and fewer than K distinct paths may be found.
+3) Greedy-LB looks only at the current maximum load, not average or variance.
+4) Each time step is treated as an independent scenario (CARRY_LOAD = false).
